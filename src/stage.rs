@@ -1,3 +1,5 @@
+use rand::Rng;
+
 struct Stage {
     stage: StageData,
     rotation: f32,
@@ -24,8 +26,20 @@ impl Stage {
 }
 
 pub fn generate_stage() -> StageData {
-    let mut stage = 
+    let mut stage: StageData::Large = [[127; 500]; 500];
+    let mut rng = rand::thread_rng();
+
+    for x in 1..100 {
+        for (x, row) in stage.iter().enumerate() {
+            for (y, column) in row.iter().enumerate {
+
+                }
+            }
+        }
+    }
 }
+
+
 
 enum StageData {
     Standard([[u8; 100]; 100]),
