@@ -1,21 +1,33 @@
 struct Stage {
-	stage: Vec<bool>,
-	rotation: f32,
+    stage: StageData,
+    rotation: f32,
+    angle: f32,
 }
 
-impl {
-	fn new() {
-		Stage {
-			stage: generate(),
-			rotation: 0f32,
-		}
-	}
+impl Stage {
+    pub fn new(generate_stage: &Fn() -> StageData, starting_rotation: f32, starting_angle: f32) -> Stage {
+        Stage {
+            stage: generate_stage(),
+            rotation: starting_rotation,
+            angle: starting_angle,
+        }
+    }
 
-	fn rotate(&mut self) {
-		
-	}
+    fn rotate(&mut self) {
+        // TODO: add stage rotation
+    }
+
+    pub fn update(&mut self, mined: []) {
+        // TODO: add stage rotation
+        self.stage[]
+    }
 }
 
-fn generate() {
+pub fn generate_stage() -> StageData {
+    let mut stage = 
+}
 
+enum StageData {
+    Standard([[u8; 100]; 100]),
+    Large([[u8; 500]; 500]),
 }
