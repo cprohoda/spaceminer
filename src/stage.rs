@@ -29,11 +29,9 @@ pub fn generate_stage() -> StageData {
     let mut stage: StageData::Large = [[127; 500]; 500];
     let mut rng = rand::thread_rng();
 
-    for x in 1..100 {
+    for x in 0..100 {
         for (x, row) in stage.iter().enumerate() {
-            for (y, column) in row.iter().enumerate {
-
-                }
+            for (y, column) in row.iter().enumerate() {
             }
         }
     }
