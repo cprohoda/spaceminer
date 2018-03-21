@@ -119,9 +119,13 @@ pub fn generate_stage() -> StageData {
                 }
 
                 if ( center/2 + rng.gen::<u8>()/2) <= ( center/4 + north/8 + south/8 + east/8 + west/8 + northwest/16 + northeast/16 + southwest/16 + southeast/16 ) { // TODO: find a better averaging algorithm re integer division
-                    center += 1;
+                    if center < 255 {
+                        center += 1;
+                    }
                 } else {
-                    center -= 1;
+                    if center > 0 {
+                        center -= 1;
+                    }
                 }
             }
         }
