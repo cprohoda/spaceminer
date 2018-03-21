@@ -4,10 +4,16 @@ extern crate rand;
 use piston_window::*;
 
 fn main() {
-    let mut window: piston_window::PistonWindow = piston_window::WindowSettings::new("Space Miner", [960, 540])
+    let mut window: PistonWindow = PistonWindow::new(
+        OpenGL::V3_3,
+        0,
+        WindowSettings::new("Space Miner", [960, 540])
+        .opengl(OpenGL::V3_3)
+        .srgb(false)
         .exit_on_esc(true)
         .build()
-        .unwrap_or_else(|error| {panic!("Build failed: {}", error)});
+        .unwrap_or_else(|error| {panic!("Build failed: {}", error)}),
+    );
 
     while let Some(event) = window.next() {
         window.draw_2d(&event, |context, graphics| {
